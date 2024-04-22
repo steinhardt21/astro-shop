@@ -1,6 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-// import { Icon } from 'astro-icon/components';
+import { Icon } from 'astro-icon/components';
 
 interface Props {
   title: string;
@@ -46,7 +46,7 @@ const imageURL = import.meta.env.PUBLIC_URL
   <body class="bg-gradient-to-tl via-transparent from-gray-500/5">
     <nav class="absolute top-0 right-0 p-6 lg:p-2">
       <a href="https://github.com/igorm84/astro-shop" target="_blank">
-        <!-- <Icon name="mdi:github" class="h-6 w-6 lg:h-8 lg:w-8 text-gray-800" /> -->
+        <Icon name="mdi:github" class="h-6 w-6 lg:h-8 lg:w-8 text-gray-800" />
         Github
       </a>
     </nav>
@@ -65,5 +65,21 @@ const imageURL = import.meta.env.PUBLIC_URL
         </a>
       </footer>
     </main>
+    <style is:global>
+      body {
+        background-color: theme(colors.gray.50);
+      }
+
+      @keyframes anumate-in {
+        0% {
+          opacity: 0;
+          transform: translateY(1rem);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
   </body>
 </html>
